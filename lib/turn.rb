@@ -32,14 +32,13 @@ def valid_move?(board, index)
 end
 
 def turn(board)
+  if(valid_move?(board,index)== "false")
+    until valid_move?(board,index)== "true"
   puts "Please enter 1-9:"
   val = gets.strip
   index  = input_to_index(val)
-  if(valid_move?(board,index)== "false")
-    until valid_move?(board,index)== "true"
-      puts "Please enter 1-9:"
-      val = gets.strip
-      index  = input_to_index(val)
+  
+      
     end
   end
   move(board, index, value="X")
