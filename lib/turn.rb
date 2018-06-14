@@ -36,11 +36,11 @@ def turn(board)
   val = gets.strip
   index  = input_to_index(val)
 
-  if(index.between?(0,8) == "false")
+  if(valid_move?(board,index)=="false")
       turn(board)
-    end
-#  end
+  else
+    move(board, index, value="X")
+    display_board(board)
+  end
 
-  move(board, index, value="X")
-  display_board(board)
 end
